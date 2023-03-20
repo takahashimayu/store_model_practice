@@ -1,10 +1,36 @@
+<h1>Showing interview</h1>
+
 <p style="color: green"><%= notice %></p>
 
-<%= render @interview %>
+<div id="<%= dom_id @interview %>">
+  <p>
+    <strong>Id:</strong>
+    <%= @interview.id %>
+  </p>
+  <p>
+    <strong>Interveiw on:</strong>
+    <%= @interview.interveiw_on %>
+  </p>
+
+  <p>
+    <strong>Employee name:</strong>
+    <%= @interview.employee_name %>
+  </p>
+
+  <p>
+    <strong>Docter name:</strong>
+    <%= @interview.docter_name %>
+  </p>
+
+  <p>
+    <strong>Contents:</strong>
+    <%= @interview.contents %>
+  </p>
+</div>
 
 <div>
-  <%= link_to "Edit this interview", edit_interview_path(@interview) %> |
-  <%= link_to "Back to interviews", interviews_path %>
+  <%= link_to "Edit this interview", edit_interview_path(@interview), class: 'btn btn-primary' %>
+  <%= link_to "Back to interviews", interviews_path, class: 'btn btn-primary' %>
 
-  <%= button_to "Destroy this interview", @interview, method: :delete %>
+  <%= button_to "Destroy this interview", @interview, method: :delete, class: 'btn btn-danger mt-1' %>
 </div>
