@@ -1,0 +1,37 @@
+<%= form_with(model: interview) do |form| %>
+  <% if interview.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(interview.errors.count, "error") %> prohibited this interview from being saved:</h2>
+
+      <ul>
+        <% interview.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :interveiw_on, style: "display: block" %>
+    <%= form.date_field :interveiw_on %>
+  </div>
+
+  <div>
+    <%= form.label :employee_name, style: "display: block" %>
+    <%= form.text_field :employee_name %>
+  </div>
+
+  <div>
+    <%= form.label :docter_name, style: "display: block" %>
+    <%= form.text_field :docter_name %>
+  </div>
+
+  <div>
+    <%= form.label :contents, style: "display: block" %>
+    <%= form.text_field :contents %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
