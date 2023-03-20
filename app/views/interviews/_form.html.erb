@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :interveiw_on, style: "display: block" %>
-    <%= form.date_field :interveiw_on %>
+  <div class="col-md-2">
+    <%= form.label :interveiw_on, style: "display: block", class: 'form-label' %>
+    <%= form.date_field :interveiw_on, class: 'form-control' %>
+  </div>
+
+  <div class="col-md-2">
+    <%= form.label :employee_name, style: "display: block", class: 'form-label' %>
+    <%= form.text_field :employee_name, class: 'form-control' %>
+  </div>
+
+  <div class="col-md-2">
+    <%= form.label :docter_name, style: "display: block", class: 'form-label' %>
+    <%= form.text_field :docter_name, class: 'form-control' %>
+  </div>
+
+  <div class="col-md-4">
+    <%= form.label :contents, style: "display: block", class: 'form-label' %>
+    <%= form.text_field :contents, class: 'form-control' %>
   </div>
 
   <div>
-    <%= form.label :employee_name, style: "display: block" %>
-    <%= form.text_field :employee_name %>
-  </div>
-
-  <div>
-    <%= form.label :docter_name, style: "display: block" %>
-    <%= form.text_field :docter_name %>
-  </div>
-
-  <div>
-    <%= form.label :contents, style: "display: block" %>
-    <%= form.text_field :contents %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit nil, class: 'btn btn-primary mt-2' %>
   </div>
 <% end %>
