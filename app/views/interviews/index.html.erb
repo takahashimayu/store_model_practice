@@ -10,7 +10,11 @@
         <th scope="col">Interview On</th>
         <th scope="col">Employee Name</th>
         <th scope="col">Doctor Name</th>
-        <th scope="col">Contents</th>
+        <th scope="col">Work Situation</th>
+        <th scope="col">Fatigue Accumulation</th>
+        <th scope="col">Mental And Physical Condition</th>
+        <th scope="col">Guidance Kbn</th>
+        <th scope="col">Note</th>
         <th scope="col"></th>
       </tr>
     </thead>
@@ -21,7 +25,11 @@
           <td><%= interview.interveiw_on %></td>
           <td><%= interview.employee_name %></td>
           <td><%= interview.docter_name %></td>
-          <td><%= interview.contents %></td>
+          <td><%= interview.work_situation %></td>
+          <td><%= interview.fatigue_accumulation %></td>
+          <td><%= interview.mental_and_physical_condition ? '所見あり' : '所見なし' %></td>
+          <td><%= interview.guidance_kbn.map { |guidance_kbn| Interview::GUIDANCE_KBN_NAME[guidance_kbn] }.join('、') %></td>
+          <td><%= interview.note %></td>
           <td><%= link_to "Show this interview", interview, class: 'btn btn-primary' %></td>
         </tr>
       <% end %>
