@@ -65,6 +65,7 @@ class InterviewsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def interview_params
-      params.require(:interview).permit(:interveiw_on, :employee_name, :docter_name, :contents)
+      params.require(:interview).permit(:interveiw_on, :employee_name, :docter_name, :contents, :work_situation, :fatigue_accumulation,
+        :mental_and_physical_condition, :note, guidance_kbn: [])
     end
 end

@@ -201,6 +201,10 @@ GEM
     sqlite3 (1.6.1-x86_64-linux)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    store_attribute (1.1.0)
+      activerecord (>= 6.0)
+    store_model (1.6.2)
+      activerecord (>= 5.2)
     thor (1.2.1)
     tilt (2.1.0)
     timeout (0.3.2)
@@ -245,6 +249,8 @@ DEPENDENCIES
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
+  store_attribute (~> 1.0)
+  store_model
   turbo-rails
   tzinfo-data
   web-console

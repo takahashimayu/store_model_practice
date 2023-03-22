@@ -19,7 +19,27 @@
   </p>
 
   <p>
-    <strong>Contents:</strong>
-    <%= interview.contents %>
+    <strong>Work Situation:</strong>
+    <%= interview.work_situation %>
+  </p>
+
+  <p>
+    <strong>Fatigue Accumulation:</strong>
+    <%= interview.fatigue_accumulation %>
+  </p>
+  
+  <p>
+    <strong>Mental And Physical Condition:</strong>
+    <%= interview.mental_and_physical_condition ? '所見あり': '所見なし' %>
+  </p>
+  
+  <p>
+    <strong>Guidance Kbn:</strong>
+    <%= interview.guidance_kbn.map { |guidance_kbn| Interview::GUIDANCE_KBN_NAME[guidance_kbn] }.join('、') %>
+  </p>
+  
+  <p>
+    <strong>Note:</strong>
+    <%= interview.note %>
   </p>
 </div>

@@ -26,9 +26,41 @@
     <%= form.text_field :docter_name, class: 'form-control' %>
   </div>
 
-  <div class="col-md-4">
-    <%= form.label :contents, style: "display: block", class: 'form-label' %>
-    <%= form.text_field :contents, class: 'form-control' %>
+  <div class="col-md-2">
+    <%= form.label :work_situation, style: "display: block", class: 'form-label' %>
+    <%= form.text_field :work_situation, class: 'form-control' %>
+  </div>
+
+  <div class="col-md-2">
+    <%= form.label :fatigue_accumulation, style: "display: block", class: 'form-label' %>
+    <%= form.number_field :fatigue_accumulation, { min: 0, max: 3, step: 1, class: 'form-control' } %>
+  </div>
+
+  <div class="col-md-2">
+    <%= form.label :mental_and_physical_condition, style: "display: block", class: 'form-label' %>
+    <div class="form-check">
+      <%= form.radio_button :mental_and_physical_condition, false, class: 'form-check-input' %>
+      <%= form.label :mental_and_physical_condition, '所見なし', { value: false, class: 'form-check-label' } %>
+    </div>
+    <div class="form-check">
+      <%= form.radio_button :mental_and_physical_condition, true, class: 'form-check-input' %>
+      <%= form.label :mental_and_physical_condition, '所見あり', { value: true, class: 'form-check-label' } %>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <%= form.label :guidance_kbn, style: "display: block", class: 'form-label' %>
+    <% form.object.class::GUIDANCE_KBN_NAME.keys.each do |guidance_kbn| %>
+      <div class="form-check">
+        <%= form.check_box  :guidance_kbn, { multiple: true, class: 'form-check-input' }, guidance_kbn, nil %>
+        <%= form.label :guidance_kbn, form.object.class::GUIDANCE_KBN_NAME[guidance_kbn], { value: guidance_kbn, class: 'form-check-label' } %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-md-2">
+    <%= form.label :note, style: "display: block", class: 'form-label' %>
+    <%= form.text_field :note, class: 'form-control' %>
   </div>
 
   <div>
