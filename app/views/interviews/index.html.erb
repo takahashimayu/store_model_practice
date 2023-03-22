@@ -16,7 +16,14 @@
     </thead>
     <tbody>
       <% @interviews.each do |interview| %>
-        <%= render interview %>
+        <tr id="<%= dom_id interview %>">
+          <th scope="row"><%= interview.id %></th>
+          <td><%= interview.interveiw_on %></td>
+          <td><%= interview.employee_name %></td>
+          <td><%= interview.docter_name %></td>
+          <td><%= interview.contents %></td>
+          <td><%= link_to "Show this interview", interview, class: 'btn btn-primary' %></td>
+        </tr>
       <% end %>
     </tbody>
   </table>
